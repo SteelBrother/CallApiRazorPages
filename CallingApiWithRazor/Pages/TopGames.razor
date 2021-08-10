@@ -1,0 +1,56 @@
+﻿@page "/topGames"
+@using CallingApiWithRazor.Models
+@using System.Net.Http.Json;
+<h3>TopGames</h3>
+@inject IHttpClientFactory _clientFactory
+
+@if (string.IsNullOrWhiteSpace(error) == false) 
+{
+    <div class="h2">@error</div>
+}
+else if(topGames is null)
+{
+    <div class="h4">Cargando...</div>
+}
+else
+{
+    <table class="table table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>PublicationDate</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in topGames)
+            {
+                <tr>
+                    <td>@item.Name</td>
+                    <td>@item.Price</td>
+                    <td>@item.PublicationDate</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    List<TopGamesModel> topGames;
+    string error;
+    protected async override Task OnInitializedAsync()
+    {
+        var client = _clientFactory.CreateClient();
+
+        try
+        {
+            topGames = await client.GetFromJsonAsync<List<TopGamesModel>>("https://localhost:5001/api/Tops");
+            error = null;
+        }
+        catch (Exception ex)
+        {
+
+            error = $"Error consultando el api {ex.Message}";
+        }
+    }
+}

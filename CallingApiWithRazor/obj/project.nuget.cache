@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "0Ilr6RBS+L46FG0Wu/f4K0TEfwwL4hTQBlHphupAB5xvskDIqDQaHWM05z1G+RJE1ueZbVr120GCAaMYH4dQ4Q==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\LARTE GAMER\\source\\repos\\CallingApiWithRazor\\CallingApiWithRazor\\CallingApiWithRazor.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\LARTE GAMER\\.nuget\\packages\\system.net.http.json\\5.0.0\\system.net.http.json.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

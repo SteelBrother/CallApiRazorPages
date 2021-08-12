@@ -1,4 +1,3 @@
-using CallingApiWithRazor.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Hosting;
@@ -28,7 +27,6 @@ namespace CallingApiWithRazor
         {
             services.AddRazorPages();
             services.AddServerSideBlazor();
-            services.AddSingleton<WeatherForecastService>();
             services.AddHttpClient();
         }
 
